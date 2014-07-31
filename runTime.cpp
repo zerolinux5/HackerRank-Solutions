@@ -6,6 +6,7 @@
 void insertionSort(int ar_size, int *  ar) {    
     int i,j;
     int value;
+    int switchNum = 0;
     for(i=0;i<ar_size;i++)
     {
         value=ar[i];
@@ -14,14 +15,12 @@ void insertionSort(int ar_size, int *  ar) {
         {
             ar[j+1]=ar[j];
             j=j-1;
+            switchNum++;
         }
         ar[j+1]=value;        
     }
-    for(j=0;j<ar_size;j++)
-    {
-        printf("%d",ar[j]);
-        printf(" ");
-    }
+
+    printf("%d \n", switchNum);
 }
 int main(void) {
    

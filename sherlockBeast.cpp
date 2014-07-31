@@ -1,3 +1,9 @@
+/*
+	Solution works and the first logic is good just
+	case by case logic is ugly looking
+	work on algorithm 
+*/
+
 #include <iostream>
 
 using namespace std;
@@ -12,18 +18,17 @@ int main()
 		cin >> digits;
 		string answer = "";
 
-		while(digits > 5){
-			if(((digits - 3) % 5) == 0){
-				digits -= 3;
-				answer += "555";
-				break;
-			} else {
-				answer += "555";
-				digits -= 3;
-			}
+		while(digits > 10){
+			digits -= 3;
+			answer += "555";
 		}
 
-		if(digits < 3 || digits == 4){
+		if(((digits - 3) % 5 == 0) && (digits != 3)){
+			answer += "555";
+			digits -= 3;
+		}
+
+		if(digits < 3 || digits == 7 || digits == 4){
 			cout << -1 << endl;
 			continue;
 		}
@@ -41,6 +46,8 @@ int main()
 				answer += '3';
 			}
 		}
+
+
 
 		cout << answer << endl;
 	}

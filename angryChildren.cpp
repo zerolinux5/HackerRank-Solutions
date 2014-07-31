@@ -1,6 +1,3 @@
-#include <cmath>
-#include <cstdio>
-#include <vector>
 #include <iostream>
 #include <algorithm>
 using namespace std;
@@ -14,11 +11,25 @@ int main() {
     int N, K, unfairness;
     cin >> N >> K;
     int candies[N];
-    for (int i=0; i<N; i++)
+    for (int i=0; i<N; i++){
         cin >> candies[i];
+    }
+
+    sort(candies, candies + N);
+
+    unfairness = candies[N-1] - candies[0];
     
-    /** Write the solution code here. Compute the result, store in  the variable unfairness --
-    and output it**/
+    for(int i = 0; i < (N - K - 1); i++){
+        int compareUnfair = candies[i + K - 1] - candies[i];
+        if(unfairness > (compareUnfair)){
+            unfairness = compareUnfair;
+        }
+    }
+
+    // for(int i = 0; i < N; i++){
+    //     cout << candies[i] << endl;
+    // }
+
     cout << unfairness << "\n";
     return 0;
 }

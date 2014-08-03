@@ -4,20 +4,23 @@ using namespace std;
 
 int main()
 {
-	int numTimes;
-	cin >> numTimes;
-	double result = 0;
+    int testNum;
+    long long x,sum=0;
+    cin>>testNum;
+    while(testNum--)
+    {
+        cin>>x;
+        sum = sum + x;
+    }
 
-	while(numTimes--){
-		double newNum;
-		cin >> newNum;
-		result += (0.5 * newNum);
-	}
+    if(sum%2==0)
+    {
+        cout<<sum/2<<".0"<<endl;
+    }
+    else
+    {
+        cout<<sum/2<<".5"<<endl;
+    }
 
-	cout.precision(1);
-	cout << fixed;
-
-	cout << result << endl;
-
-	return 1;
+    return 0;
 }

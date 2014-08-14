@@ -11,35 +11,41 @@ int main()
 	for(int i = 0; i < testNum; i++){
 		int numRead;
 		cin >> numRead;
-		int flag = 0;
+		//Edge case
+		int flag = 0; 
 
 		int numArray[numRead];
 		for(int j = 0; j < numRead; j++){
 			cin >> numArray[j];
 		}
 
-		for(int j = 0; j < numRead; j++){
+		if(numRead == 1){
+			cout << "NO" << endl;
+			continue;
+		}
+
+		for(int j = 0; j < (numRead - 1); j++){
 			for(int k = j+1; k < numRead; k++){
 				int divisible = 2;
 				while(divisible <= max(numArray[k], numArray[j])){
-					if((numArray[k] % divisible != 0) && (numArray[j] % divisible != 0)){
-						cout << "YES" << endl;
+					if((numArray[k] % divisible == 0) && (numArray[j] % divisible == 0)){
 						flag = 1;
 						break;
 					}
+					if(divisible == max(numArray[k], numArray[j])){
+						flag = 0;
+					}
 					divisible++;
-				}
-
-				if(flag){
-					break;
 				}
 			}
 
-			if(flag){
+			if(!flag){
+				cout << "YES" << endl;
 				break;
 			}
 		}
-		if(!flag){
+
+		if(flag){
 			cout << "NO" << endl;
 		}
 	}

@@ -7,7 +7,9 @@ int main(){
 	cin >> testNum;
 
 	while(testNum--){
-
+		long inputNum;
+		cin >> inputNum;
+		cout << ++inputNum << endl;
 	}
 
 	return 0;

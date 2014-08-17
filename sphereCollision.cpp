@@ -1,4 +1,5 @@
 #include <iostream>
+#include <math.h>
 
 using namespace std;
 
@@ -28,6 +29,13 @@ int main()
 		cin >> x >> y >> z;
 		cin >> xA >> yA >> zA;
 		Sphere s2 = {x, y, z, r2, xA, yA, zA};
+
+		int dist = sqrt(pow((s1.x - s2.x), 2) + pow((s1.y - s2.y), 2) + pow((s1.z - s2.z), 2));
+		dist -= (s1.radius + s2.radius);
+		if(dist <= 0){
+			cout << "NO" << endl;
+			continue;
+		}
 
 	}
 

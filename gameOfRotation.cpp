@@ -8,6 +8,7 @@ int main()
 	cin >> beltSize;
 
 	int initialArray[beltSize];
+	int maxValue = 0;
 
 	for(int i = 0; i < beltSize; i++){
 		cin >> initialArray[i];

@@ -2,8 +2,9 @@
 
 using namespace std;
 
-void mergeArray(int arrayA[], int arrayB[], int finalArray[], int sizeA, int sizeB){
+int* mergeArray(int arrayA[], int arrayB[],int sizeA, int sizeB){
 	int finalLength = sizeA + sizeB;
+	int *finalArray = new int[finalLength];
 
 	int pointA = 0, pointB = 0;
 	for(int i = 0; i < finalLength; i++){
@@ -21,6 +22,8 @@ void mergeArray(int arrayA[], int arrayB[], int finalArray[], int sizeA, int siz
 			pointA++;
 		}
 	}
+
+	return finalArray;
 }
 
 
@@ -41,13 +44,12 @@ int main()
 	}
 
 	int totalSize = size1 + size2;
-	int finalArray[totalSize];
-
-	mergeArray(arrayA, arrayB, finalArray, size1, size2);
+	int *finalArray = mergeArray(arrayA, arrayB, size1, size2);
 
 	for(int i = 0; i < totalSize; i++){
 		cout << finalArray[i] << endl;
 	}
 
+	delete(finalArray);
 	return 0;
 }

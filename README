@@ -3,6 +3,8 @@ This folder is to contain all the challenges solved in hackerrank and is to be u
 On Hold:
 teamsAndTopics.cpp
 duplicateNames.cpp
+cubes.cpp
+equations.cpp
 
 Works but outputs wrong:
 palindromeIndewx.cpp

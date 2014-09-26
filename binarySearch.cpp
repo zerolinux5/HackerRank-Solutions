@@ -11,9 +11,9 @@ int binarySearch(int start, int end, int search, int array[])
 	if(array[mid] == search){
 		return 1;
 	} else if (array[mid] > search){
-		return binarySearch(start,mid,search,array);
+		return binarySearch(start,mid - 1,search,array);
 	} else {
-		return binarySearch(mid,end,search,array);
+		return binarySearch(mid + 1,end,search,array);
 	}
 }
 
@@ -27,7 +27,11 @@ int main()
 		cin >> inArray[i];
 	}
 
-	cout << binarySearch(0, size, search, inArray) << endl;
+	if( binarySearch(0, size, search, inArray)){
+		cout << search << " is in the array" << endl;
+	} else {
+		cout << search << " isn't in the array" << endl;
+	}
 
 	return 0;
 }

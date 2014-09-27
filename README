@@ -5,6 +5,7 @@ teamsAndTopics.cpp
 duplicateNames.cpp
 cubes.cpp
 equations.cpp
+shpereCollision.cpp
 
 Works but outputs wrong:
 palindromeIndewx.cpp

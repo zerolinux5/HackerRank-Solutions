@@ -45,11 +45,13 @@ int* mergeSort(int start, int size, int* mArray)
 		
 		int* returnArray = mergeArray(left, right, (mid - start), (size - mid));
 
+		/*
 		cout << "Returning: ";
 		for(int i = 0; i < size;i++){
 			cout << returnArray[i] << " ";
 		}
 		cout << endl;
+		*/
 		return returnArray;
 	}
 }

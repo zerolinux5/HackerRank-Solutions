@@ -25,7 +25,18 @@ int main()
 
 	sort(arrayB, arrayB + sizeB);
 	for(int i = 0; i < sizeB;i++){
-		cout << arrayB[i] << endl;
+		for(int j = 0; j < sizeA; j++){
+			if(arrayB[i] == arrayA[i]){
+				arrayA[i] = -1;
+				break;
+			}
+		}
+	}
+
+	for(int i = 0; i < sizeA;i++){
+		if(arrayA[i] != -1){
+			cout << arrayA[i] << " ";
+		}
 	}
 
 	return 0;

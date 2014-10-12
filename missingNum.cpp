@@ -19,20 +19,22 @@ int main()
 	}
 
 	sort(arrayA, arrayA + sizeA);
-
 	sort(arrayB, arrayB + sizeB);
-	for(int i = 0; i < sizeB;i++){
-		for(int j = 0; j < sizeA; j++){
-			if(arrayB[i] == arrayA[i]){
-				arrayA[i] = -1;
+
+	int flag = 0;
+	for(int i = 0; i < sizeA;i++){
+		for(int j = flag; j < sizeB; j++){
+			if(arrayB[j] == arrayA[i]){
+				arrayB[j] = -1;
+				flag = j+1;
 				break;
 			}
 		}
 	}
 
-	for(int i = 0; i < sizeA;i++){
-		if(arrayA[i] != -1){
-			cout << arrayA[i] << " ";
+	for(int i = 0; i < sizeB;i++){
+		if(arrayB[i] != -1){
+			cout << arrayB[i] << " ";
 		}
 	}
 

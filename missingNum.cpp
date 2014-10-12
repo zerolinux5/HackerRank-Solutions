@@ -19,9 +19,6 @@ int main()
 	}
 
 	sort(arrayA, arrayA + sizeA);
-	for(int i = 0; i < sizeA;i++){
-		cout << arrayA[i] << endl;
-	}
 
 	sort(arrayB, arrayB + sizeB);
 	for(int i = 0; i < sizeB;i++){

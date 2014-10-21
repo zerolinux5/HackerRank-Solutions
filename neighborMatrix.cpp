@@ -26,17 +26,17 @@ int main()
 				neighborInt += inputArray[i][j+1];
 				neighborInt += inputArray[i+1][j+1];
 				outputArray[i][j] = neighborInt;
-				//top right corner
-			} else if ((i == sizeM - 1) && (j == 0)){
-				int neighborInt = inputArray[i][j-1];
-				neighborInt += inputArray[i+1][j];
-				neighborInt += inputArray[i-1][j-1];
-				outputArray[i][j] = neighborInt;
 				//bottom left corner
-			} else if (i == 0 && (j == sizeN - 1)) {
+			} else if ((i == sizeM - 1) && (j == 0)){
 				int neighborInt = inputArray[i-1][j];
-				neighborInt += inputArray[i][j+1];
 				neighborInt += inputArray[i-1][j+1];
+				neighborInt += inputArray[i][j+1];
+				outputArray[i][j] = neighborInt;
+				//top right corner
+			} else if (i == 0 && (j == sizeN - 1)) {
+				int neighborInt = inputArray[i][j-1];
+				neighborInt += inputArray[i+1][j-1];
+				neighborInt += inputArray[i+1][j];
 				outputArray[i][j] = neighborInt;
 				//bottom right corner
 			} else if ((i == sizeM - 1) && (j == sizeN - 1)){
@@ -47,7 +47,7 @@ int main()
 				//top row
 			} else if (i == 0){
 				int neighborInt = inputArray[i][j-1];
-				neighborInt = inputArray[i][j+1];
+				neighborInt += inputArray[i][j+1];
 				neighborInt += inputArray[i+1][j-1];
 				neighborInt += inputArray[i+1][j+1];
 				neighborInt += inputArray[i+1][j];
@@ -55,7 +55,7 @@ int main()
 				//bottom row
 			} else if (i ==  sizeM - 1){
 				int neighborInt = inputArray[i][j-1];
-				neighborInt = inputArray[i][j+1];
+				neighborInt += inputArray[i][j+1];
 				neighborInt += inputArray[i-1][j-1];
 				neighborInt += inputArray[i-1][j+1];
 				neighborInt += inputArray[i-1][j];
@@ -79,7 +79,7 @@ int main()
 				//anything else
 			} else {
 				int neighborInt = inputArray[i][j-1];
-				neighborInt = inputArray[i][j+1];
+				neighborInt += inputArray[i][j+1];
 				neighborInt += inputArray[i-1][j];
 				neighborInt += inputArray[i-1][j-1];
 				neighborInt += inputArray[i-1][j+1];
@@ -92,6 +92,7 @@ int main()
 		}
 	}
 
+	//print out
 	for(int i = 0; i < sizeM; i++){
 		for(int j = 0; j < sizeN; j++){
 			cout << outputArray[i][j] << " ";

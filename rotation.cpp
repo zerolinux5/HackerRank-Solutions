@@ -26,10 +26,21 @@ int main()
 		counter++; 
 	}
 
-	///* Debugg to check array
+	int searchArray[indexes];
+
+	for(int i = 0; i < indexes;i++){
+		cin >> searchArray[i];
+	}
+
+	for(int i = 0; i < indexes;i++){
+		int index = searchArray[i];
+		cout << circularArray[index] << endl;
+	}
+
+	/* Debugg to check array
 	for(int i = 0; i < size; i++){
 		cout << circularArray[i] << endl;
-	}//*/
+	}*/
 
 	return 0;
 

@@ -14,10 +14,10 @@ int main()
 		cin >> circularArray[i];
 	}
 
-	int oldIndex = 0;
+	long long oldIndex = 0;
 	int oldValue = circularArray[0];
 	while(counter < size){
-		int newlocation = oldIndex + turns;
+		long long newlocation = oldIndex + turns;
 		newlocation %= size;
 		int tempValue = circularArray[newlocation];
 		circularArray[newlocation] = oldValue;

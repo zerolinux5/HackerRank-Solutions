@@ -7,6 +7,7 @@ cubes.cpp
 equations.cpp
 sphereCollision.cpp
 sherlockQueries.cpp
+biggerLex.cpp
 
 Works but outputs wrong:
 palindromeIndewx.cpp

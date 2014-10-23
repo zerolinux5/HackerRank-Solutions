@@ -87,7 +87,6 @@ int main()
 				neighborInt += inputArray[i+1][j-1];
 				neighborInt += inputArray[i+1][j+1];
 				outputArray[i][j] = neighborInt;
-
 			}
 		}
 	}
